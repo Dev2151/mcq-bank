@@ -1,0 +1,7 @@
+# Keep generated data out of GitHub's language stats.
+data/mcqs.txt linguist-generated
+data/mcqs.jsonl linguist-generated
+data/counts.csv linguist-generated
+data/subject_answer_matrix.csv linguist-generated
+stats/summary.md linguist-generated
+stats/charts/*.svg linguist-generated

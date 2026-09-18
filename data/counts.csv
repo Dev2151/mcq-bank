@@ -1,0 +1,12 @@
+metric,key,count,share_pct
+subject,Astronomy,834,16.68
+subject,Biology,833,16.66
+subject,Computer Science,833,16.66
+subject,Geography,834,16.68
+subject,History,833,16.66
+subject,Physics,833,16.66
+answer,A,723,14.46
+answer,B,1750,35.00
+answer,C,1770,35.40
+answer,D,757,15.14
+total,questions,5000,100.00
