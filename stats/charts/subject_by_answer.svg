@@ -1,59 +1,59 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="322" viewBox="0 0 720 322" role="img" font-family="ui-sans-serif,system-ui,Segoe UI,Helvetica,Arial,sans-serif">
 
 <text x="16" y="26" font-size="15" font-weight="600" fill="#111827">Answer distribution within each subject</text>
-<rect x="160.0" y="48" width="73.2" height="32" fill="#f97316"/>
-<text x="196.6" y="68.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">15%</text>
-<rect x="233.2" y="48" width="184.3" height="32" fill="#2563eb"/>
-<text x="325.4" y="68.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">37%</text>
-<rect x="417.5" y="48" width="162.7" height="32" fill="#10b981"/>
-<text x="498.8" y="68.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">33%</text>
-<rect x="580.2" y="48" width="79.8" height="32" fill="#f59e0b"/>
-<text x="620.1" y="68.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">16%</text>
+<rect x="160.0" y="48" width="126.7" height="32" fill="#f97316"/>
+<text x="223.3" y="68.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">25%</text>
+<rect x="286.7" y="48" width="130.9" height="32" fill="#2563eb"/>
+<text x="352.1" y="68.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">26%</text>
+<rect x="417.5" y="48" width="117.6" height="32" fill="#10b981"/>
+<text x="476.3" y="68.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">24%</text>
+<rect x="535.2" y="48" width="124.8" height="32" fill="#f59e0b"/>
+<text x="597.6" y="68.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">25%</text>
 <text x="150" y="68.0" text-anchor="end" font-size="13" fill="#111827">Physics</text>
-<rect x="160.0" y="88" width="69.0" height="32" fill="#f97316"/>
-<text x="194.5" y="108.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">14%</text>
-<rect x="229.0" y="88" width="179.5" height="32" fill="#2563eb"/>
-<text x="318.8" y="108.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">36%</text>
-<rect x="408.5" y="88" width="174.1" height="32" fill="#10b981"/>
-<text x="495.5" y="108.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">35%</text>
-<rect x="582.6" y="88" width="77.4" height="32" fill="#f59e0b"/>
-<text x="621.3" y="108.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">15%</text>
+<rect x="160.0" y="88" width="122.4" height="32" fill="#f97316"/>
+<text x="221.2" y="108.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">24%</text>
+<rect x="282.4" y="88" width="126.1" height="32" fill="#2563eb"/>
+<text x="345.5" y="108.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">25%</text>
+<rect x="408.5" y="88" width="126.7" height="32" fill="#10b981"/>
+<text x="471.8" y="108.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">25%</text>
+<rect x="535.2" y="88" width="124.8" height="32" fill="#f59e0b"/>
+<text x="597.6" y="108.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">25%</text>
 <text x="150" y="108.0" text-anchor="end" font-size="13" fill="#111827">History</text>
-<rect x="160.0" y="128" width="68.9" height="32" fill="#f97316"/>
-<text x="194.5" y="148.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">14%</text>
-<rect x="228.9" y="128" width="173.3" height="32" fill="#2563eb"/>
-<text x="315.6" y="148.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">35%</text>
-<rect x="402.2" y="128" width="183.5" height="32" fill="#10b981"/>
-<text x="493.9" y="148.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">37%</text>
-<rect x="585.7" y="128" width="74.3" height="32" fill="#f59e0b"/>
-<text x="622.8" y="148.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">15%</text>
+<rect x="160.0" y="128" width="110.9" height="32" fill="#f97316"/>
+<text x="215.5" y="148.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">22%</text>
+<rect x="270.9" y="128" width="131.3" height="32" fill="#2563eb"/>
+<text x="336.6" y="148.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">26%</text>
+<rect x="402.2" y="128" width="134.3" height="32" fill="#10b981"/>
+<text x="469.4" y="148.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">27%</text>
+<rect x="536.5" y="128" width="123.5" height="32" fill="#f59e0b"/>
+<text x="598.2" y="148.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">25%</text>
 <text x="150" y="148.0" text-anchor="end" font-size="13" fill="#111827">Geography</text>
-<rect x="160.0" y="168" width="72.0" height="32" fill="#f97316"/>
-<text x="196.0" y="188.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">14%</text>
-<rect x="232.0" y="168" width="172.9" height="32" fill="#2563eb"/>
-<text x="318.5" y="188.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">35%</text>
-<rect x="404.9" y="168" width="186.7" height="32" fill="#10b981"/>
-<text x="498.2" y="188.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">37%</text>
-<rect x="591.6" y="168" width="68.4" height="32" fill="#f59e0b"/>
-<text x="625.8" y="188.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">14%</text>
+<rect x="160.0" y="168" width="125.5" height="32" fill="#f97316"/>
+<text x="222.7" y="188.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">25%</text>
+<rect x="285.5" y="168" width="119.4" height="32" fill="#2563eb"/>
+<text x="345.2" y="188.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">24%</text>
+<rect x="404.9" y="168" width="135.1" height="32" fill="#10b981"/>
+<text x="472.4" y="188.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">27%</text>
+<rect x="540.0" y="168" width="120.0" height="32" fill="#f59e0b"/>
+<text x="600.0" y="188.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">24%</text>
 <text x="150" y="188.0" text-anchor="end" font-size="13" fill="#111827">Biology</text>
-<rect x="160.0" y="208" width="76.7" height="32" fill="#f97316"/>
-<text x="198.4" y="228.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">15%</text>
-<rect x="236.7" y="208" width="185.9" height="32" fill="#2563eb"/>
-<text x="329.7" y="228.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">37%</text>
-<rect x="422.6" y="208" width="162.5" height="32" fill="#10b981"/>
-<text x="503.8" y="228.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">32%</text>
-<rect x="585.1" y="208" width="74.9" height="32" fill="#f59e0b"/>
-<text x="622.5" y="228.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">15%</text>
+<rect x="160.0" y="208" width="124.1" height="32" fill="#f97316"/>
+<text x="222.1" y="228.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">25%</text>
+<rect x="284.1" y="208" width="138.5" height="32" fill="#2563eb"/>
+<text x="353.3" y="228.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">28%</text>
+<rect x="422.6" y="208" width="119.3" height="32" fill="#10b981"/>
+<text x="482.2" y="228.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">24%</text>
+<rect x="541.9" y="208" width="118.1" height="32" fill="#f59e0b"/>
+<text x="600.9" y="228.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">24%</text>
 <text x="150" y="228.0" text-anchor="end" font-size="13" fill="#111827">Astronomy</text>
-<rect x="160.0" y="248" width="73.8" height="32" fill="#f97316"/>
-<text x="196.9" y="268.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">15%</text>
-<rect x="233.8" y="248" width="154.3" height="32" fill="#2563eb"/>
-<text x="311.0" y="268.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">31%</text>
-<rect x="388.1" y="248" width="192.7" height="32" fill="#10b981"/>
-<text x="484.4" y="268.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">39%</text>
-<rect x="580.8" y="248" width="79.2" height="32" fill="#f59e0b"/>
-<text x="620.4" y="268.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">16%</text>
+<rect x="160.0" y="248" width="117.6" height="32" fill="#f97316"/>
+<text x="218.8" y="268.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">24%</text>
+<rect x="277.6" y="248" width="110.4" height="32" fill="#2563eb"/>
+<text x="332.9" y="268.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">22%</text>
+<rect x="388.1" y="248" width="136.9" height="32" fill="#10b981"/>
+<text x="456.5" y="268.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">27%</text>
+<rect x="524.9" y="248" width="135.1" height="32" fill="#f59e0b"/>
+<text x="592.5" y="268.0" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="600">27%</text>
 <text x="150" y="268.0" text-anchor="end" font-size="13" fill="#111827">Computer Science</text>
 <rect x="160" y="292" width="12" height="12" rx="3" fill="#f97316"/>
 <text x="178" y="302" font-size="12.5" fill="#374151">A</text>

@@ -192,8 +192,68 @@ def donut(counts: Counter, colors: dict[str, str], title: str,
 
 
 # ---------------------------------------------------------------------------
-# Main
+# Uniformity statistics
 # ---------------------------------------------------------------------------
+
+def chi_square_sf(x: float, k: int) -> float:
+    """Survival function of the chi-square distribution (right tail) using the
+    regularized upper incomplete gamma function Q(k/2, x/2), for small k.
+    Enough for df=3 here; no third-party dependencies needed."""
+    import math
+
+    def gamma_p_series(s: float, x: float) -> float:
+        # Regularized lower incomplete gamma P(s, x) for x < s+1 (series form).
+        term = 1.0 / s
+        total = term
+        n = 0
+        while True:
+            n += 1
+            term *= x / (s + n)
+            total += term
+            if abs(term) < 1e-15 * abs(total) or n > 10_000:
+                break
+        return total * math.exp(-x + s * math.log(x) - math.lgamma(s))
+
+    def gamma_q_cf(s: float, x: float) -> float:
+        # Regularized upper incomplete gamma Q(s, x) via Lentz continued fraction.
+        tiny = 1e-300
+        b = x + 1.0 - s
+        c = 1.0 / tiny
+        d = 1.0 / b
+        h = d
+        for i in range(1, 10_000):
+            an = -i * (i - s)
+            b += 2.0
+            d = an * d + b
+            if abs(d) < tiny:
+                d = tiny
+            c = b + an / c
+            if abs(c) < tiny:
+                c = tiny
+            d = 1.0 / d
+            delta = d * c
+            h *= delta
+            if abs(delta - 1.0) < 1e-15:
+                break
+        return math.exp(-x + s * math.log(x) - math.lgamma(s)) * h
+
+    a = k / 2.0
+    xx = x / 2.0
+    if xx < a + 1.0:
+        return 1.0 - gamma_p_series(a, xx)
+    return gamma_q_cf(a, xx)
+
+
+def uniformity_report(answer_counts: Counter, total: int) -> dict:
+    """Chi-square goodness-of-fit test of the answer key against uniform 25%.
+    With uniform generation this should NOT be significant; a significant
+    result would indicate forced bias (like the biased-v1 dataset)."""
+    expected = total / 4.0
+    chi2 = sum((answer_counts[L] - expected) ** 2 / expected for L in LETTERS)
+    p = chi_square_sf(chi2, df) if (df := len(LETTERS) - 1) else 1.0
+    shares = {L: answer_counts[L] / total for L in LETTERS}
+    minmax = max(shares.values()) - min(shares.values())
+    return {"chi2": chi2, "df": df, "p": p, "expected": expected, "spread": minmax}
 
 def main() -> None:
     records = load_records()
@@ -242,6 +302,8 @@ def main() -> None:
         encoding="utf-8")
 
     # ---- Markdown summary ----
+    stats = uniformity_report(answer_counts, total)
+    sig = "IS" if stats["p"] < 0.05 else "is NOT"
     bc = answer_counts["B"] + answer_counts["C"]
     ad = answer_counts["A"] + answer_counts["D"]
     lines = [
@@ -256,18 +318,28 @@ def main() -> None:
         "| Metric | Value |",
         "|---|---|",
         f"| Total questions | **{total:,}** |",
-        f"| B answers | **{answer_counts['B']:,}** ({100 * answer_counts['B'] / total:.1f}%) |",
-        f"| C answers | **{answer_counts['C']:,}** ({100 * answer_counts['C'] / total:.1f}%) |",
         f"| A answers | {answer_counts['A']:,} ({100 * answer_counts['A'] / total:.1f}%) |",
+        f"| B answers | {answer_counts['B']:,} ({100 * answer_counts['B'] / total:.1f}%) |",
+        f"| C answers | {answer_counts['C']:,} ({100 * answer_counts['C'] / total:.1f}%) |",
         f"| D answers | {answer_counts['D']:,} ({100 * answer_counts['D'] / total:.1f}%) |",
-        f"| B+C combined | **{bc:,} ({100 * bc / total:.1f}%)** |",
+        f"| B+C combined | {bc:,} ({100 * bc / total:.1f}%) |",
         f"| A+D combined | {ad:,} ({100 * ad / total:.1f}%) |",
         "",
-        "## Answer-key bias",
+        "## Is the answer key biased? (uniformity test)",
         "",
-        f"As designed, B and C carry **{100 * bc / total:.1f}%** of the correct answers "
-        f"while A and D carry only **{100 * ad / total:.1f}%** - each of B/C is roughly "
-        "2.4x more likely than A or D.",
+        "The generator places the correct option **uniformly at random** - no forced "
+        "bias. A chi-square goodness-of-fit test against a uniform 25% per letter:",
+        "",
+        f"- chi-square = **{stats['chi2']:.2f}** (df = {stats['df']}, expected {stats['expected']:.0f} per letter)",
+        f"- p-value = **{stats['p']:.3f}" + ("** - " if stats["p"] < 0.05 else "** - ") +
+        f"the key {sig} significantly different from uniform at the 0.05 level.",
+        f"- Max letter share {100 * max(answer_counts.values()) / total:.1f}%, "
+        f"min {100 * min(answer_counts.values()) / total:.1f}% "
+        f"(spread {100 * stats['spread']:.1f} pp) - within normal sampling noise for n = {total:,}.",
+        "",
+        "> Note: the earlier version of this dataset (git tag `biased-v1`) *forced* a "
+        "B/C-heavy key (70.4% B+C) as a demo fixture. That bias was an input, not a "
+        "finding. This version is the honest, unforced baseline.",
         "",
         "## Charts",
         "",

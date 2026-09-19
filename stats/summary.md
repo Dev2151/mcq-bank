@@ -7,16 +7,22 @@
 | Metric | Value |
 |---|---|
 | Total questions | **5,000** |
-| B answers | **1,750** (35.0%) |
-| C answers | **1,770** (35.4%) |
-| A answers | 723 (14.5%) |
-| D answers | 757 (15.1%) |
-| B+C combined | **3,520 (70.4%)** |
-| A+D combined | 1,480 (29.6%) |
+| A answers | 1,212 (24.2%) |
+| B answers | 1,261 (25.2%) |
+| C answers | 1,283 (25.7%) |
+| D answers | 1,244 (24.9%) |
+| B+C combined | 2,544 (50.9%) |
+| A+D combined | 2,456 (49.1%) |
 
-## Answer-key bias
+## Is the answer key biased? (uniformity test)
 
-As designed, B and C carry **70.4%** of the correct answers while A and D carry only **29.6%** - each of B/C is roughly 2.4x more likely than A or D.
+The generator places the correct option **uniformly at random** - no forced bias. A chi-square goodness-of-fit test against a uniform 25% per letter:
+
+- chi-square = **2.15** (df = 3, expected 1250 per letter)
+- p-value = **0.541** - the key is NOT significantly different from uniform at the 0.05 level.
+- Max letter share 25.7%, min 24.2% (spread 1.4 pp) - within normal sampling noise for n = 5,000.
+
+> Note: the earlier version of this dataset (git tag `biased-v1`) *forced* a B/C-heavy key (70.4% B+C) as a demo fixture. That bias was an input, not a finding. This version is the honest, unforced baseline.
 
 ## Charts
 
@@ -38,13 +44,13 @@ As designed, B and C carry **70.4%** of the correct answers while A and D carry 
 
 | Subject | A | B | C | D | Total |
 |---|---:|---:|---:|---:|---:|
-| Astronomy | 128 | 310 | 271 | 125 | 834 |
-| Biology | 120 | 288 | 311 | 114 | 833 |
-| Computer Science | 123 | 257 | 321 | 132 | 833 |
-| Geography | 115 | 289 | 306 | 124 | 834 |
-| History | 115 | 299 | 290 | 129 | 833 |
-| Physics | 122 | 307 | 271 | 133 | 833 |
-| **ALL** | **723** | **1750** | **1770** | **757** | **5000** |
+| Astronomy | 207 | 231 | 199 | 197 | 834 |
+| Biology | 209 | 199 | 225 | 200 | 833 |
+| Computer Science | 196 | 184 | 228 | 225 | 833 |
+| Geography | 185 | 219 | 224 | 206 | 834 |
+| History | 204 | 210 | 211 | 208 | 833 |
+| Physics | 211 | 218 | 196 | 208 | 833 |
+| **ALL** | **1212** | **1261** | **1283** | **1244** | **5000** |
 
 ## Files
 

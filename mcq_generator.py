@@ -3,8 +3,12 @@
 mcq_generator.py - Generate a synthetic MCQ dataset (5,000 questions).
 
 Each question has four options (A-D) with exactly one correct answer.
-The answer key is deliberately biased: B and C occur more often than
-A and D (15% / 35% / 35% / 15%). Deterministic via a fixed PRNG seed.
+The correct option is placed UNIFORMLY at random (no forced bias):
+any deviation from 25% per letter in the output is sampling noise, not
+design. Deterministic via a fixed PRNG seed.
+
+For the older version that deliberately biased the key toward B and C
+(70.4% B+C), see git tag `biased-v1`.
 
 Outputs (under data/):
   mcqs.txt    - human-readable question bank (primary artifact)
@@ -16,6 +20,7 @@ Usage:
 
 from __future__ import annotations
 
+import csv
 import json
 import random
 from collections import Counter
@@ -24,8 +29,10 @@ from pathlib import Path
 TOTAL_QUESTIONS = 5_000
 SEED = 20260918
 
-# Deliberate answer-key bias (percentages): B and C favored over A and D.
-ANSWER_WEIGHTS = (15, 35, 35, 15)  # A, B, C, D
+# Uniform answer placement: every letter equally likely. Override here to
+# experiment (e.g. (15, 35, 35, 15) reproduces the biased-v1 dataset).
+ANSWER_WEIGHTS = (25, 25, 25, 25)  # A, B, C, D
+UNIFORM = True
 LETTERS = ("A", "B", "C", "D")
 
 ROOT = Path(__file__).resolve().parent
@@ -228,7 +235,8 @@ def physics_bank() -> list[tuple[str, str, list[str]]]:
 
 
 def make_options(fact: str, distractor_pool: list[str], rng: random.Random):
-    """Pick 3 unique distractors and place the fact at a biased index."""
+    """Pick 3 unique distractors and place the fact at a random index
+    (uniform by default - see ANSWER_WEIGHTS)."""
     pool = sorted({d for d in distractor_pool if d != fact})
     rng.shuffle(pool)
     distractors = pool[:3]
@@ -323,7 +331,18 @@ def write_outputs(records: list[dict]) -> Counter:
         for r in records:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
-    return Counter(r["answer"] for r in records)
+    subject_counts = Counter(r["subject"] for r in records)
+    answer_counts = Counter(r["answer"] for r in records)
+    with (DATA_DIR / "counts.csv").open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["metric", "key", "count", "share_pct"])
+        for s, c in sorted(subject_counts.items()):
+            w.writerow(["subject", s, c, f"{100 * c / TOTAL_QUESTIONS:.2f}"])
+        for a in LETTERS:
+            w.writerow(["answer", a, answer_counts[a], f"{100 * answer_counts[a] / TOTAL_QUESTIONS:.2f}"])
+        w.writerow(["total", "questions", len(records), "100.00"])
+
+    return answer_counts
 
 
 def main() -> None:

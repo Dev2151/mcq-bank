@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="260" height="304" viewBox="0 0 260 304" role="img" font-family="ui-sans-serif,system-ui,Segoe UI,Helvetica,Arial,sans-serif">
 
 <text x="130.0" y="18" text-anchor="middle" font-size="14" font-weight="600" fill="#111827">Answer-key share</text>
-<circle cx="130.0" cy="147.0" r="116.0" fill="none" stroke="#f97316" stroke-width="40" stroke-dasharray="105.39 623.46" stroke-dashoffset="-0.00" transform="rotate(-90 130.0 147.0)"/>
-<circle cx="130.0" cy="147.0" r="116.0" fill="none" stroke="#2563eb" stroke-width="40" stroke-dasharray="255.10 473.75" stroke-dashoffset="-105.39" transform="rotate(-90 130.0 147.0)"/>
-<circle cx="130.0" cy="147.0" r="116.0" fill="none" stroke="#10b981" stroke-width="40" stroke-dasharray="258.01 470.84" stroke-dashoffset="-360.49" transform="rotate(-90 130.0 147.0)"/>
-<circle cx="130.0" cy="147.0" r="116.0" fill="none" stroke="#f59e0b" stroke-width="40" stroke-dasharray="110.35 618.50" stroke-dashoffset="-618.50" transform="rotate(-90 130.0 147.0)"/>
+<circle cx="130.0" cy="147.0" r="116.0" fill="none" stroke="#f97316" stroke-width="40" stroke-dasharray="176.67 552.18" stroke-dashoffset="-0.00" transform="rotate(-90 130.0 147.0)"/>
+<circle cx="130.0" cy="147.0" r="116.0" fill="none" stroke="#2563eb" stroke-width="40" stroke-dasharray="183.82 545.03" stroke-dashoffset="-176.67" transform="rotate(-90 130.0 147.0)"/>
+<circle cx="130.0" cy="147.0" r="116.0" fill="none" stroke="#10b981" stroke-width="40" stroke-dasharray="187.02 541.83" stroke-dashoffset="-360.49" transform="rotate(-90 130.0 147.0)"/>
+<circle cx="130.0" cy="147.0" r="116.0" fill="none" stroke="#f59e0b" stroke-width="40" stroke-dasharray="181.34 547.51" stroke-dashoffset="-547.51" transform="rotate(-90 130.0 147.0)"/>
 <text x="130.0" y="142.0" text-anchor="middle" font-size="22" font-weight="700" fill="#111827">5,000</text>
 <text x="130.0" y="162.0" text-anchor="middle" font-size="12" fill="#6b7280">questions</text>
 <rect x="18" y="280" width="11" height="11" rx="3" fill="#f97316"/>
-<text x="34" y="290" font-size="11.5" fill="#374151">A 14%</text>
+<text x="34" y="290" font-size="11.5" fill="#374151">A 24%</text>
 <rect x="76" y="280" width="11" height="11" rx="3" fill="#2563eb"/>
-<text x="92" y="290" font-size="11.5" fill="#374151">B 35%</text>
+<text x="92" y="290" font-size="11.5" fill="#374151">B 25%</text>
 <rect x="134" y="280" width="11" height="11" rx="3" fill="#10b981"/>
-<text x="150" y="290" font-size="11.5" fill="#374151">C 35%</text>
+<text x="150" y="290" font-size="11.5" fill="#374151">C 26%</text>
 <rect x="192" y="280" width="11" height="11" rx="3" fill="#f59e0b"/>
-<text x="208" y="290" font-size="11.5" fill="#374151">D 15%</text>
+<text x="208" y="290" font-size="11.5" fill="#374151">D 25%</text>
 </svg>
